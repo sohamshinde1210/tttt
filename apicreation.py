@@ -43,10 +43,3 @@ def update_todo(todo_id: int, updated_todo: Todo):
             return {"message": "Todo updated successfully!", "data": updated_todo}
     return {"message": "Todo not found!"}
 
-@app.delete("/todos/{todo_id}")
-def delete_todo(todo_id: int):
-    for index, todo in enumerate(todos):
-        if todo.id == todo_id:
-            del todos[index]
-            return {"message": "Todo deleted successfully!"}
-    return {"message": "Todo not found!"}
